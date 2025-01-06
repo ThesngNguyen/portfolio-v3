@@ -36,6 +36,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    boxShadow: {
+      'outer': '0 0 10px 5px rgba(255, 255, 255, 0.3)',
+    },
   },
   container: {
     padding: {
