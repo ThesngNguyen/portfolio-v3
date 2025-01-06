@@ -27,9 +27,6 @@ export default {
     animation: {
       'spin-slow': 'spin 6s linear infinite'
     },
-    fontFamily: {
-      sora: [`var(--font-sora)`, 'sans-serif']
-    },
     extend: {
       colors: {
         background: "var(--background)",
