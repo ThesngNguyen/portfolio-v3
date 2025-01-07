@@ -13,10 +13,10 @@ return (
         <Avatar
             src={avatarUrl}
             shape="circle"
-            size={200}
+            size={150}
             draggable
             className="bg-white p-4"
-            >
+        >
         </Avatar>
     </Space>
 )
