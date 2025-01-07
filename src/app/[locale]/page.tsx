@@ -2,7 +2,6 @@ import ParticlesBackground from "@/components/background/pariticlesBackground";
 import Body from "@/components/home/body";
 import { ConfigProvider } from "antd/lib";
 import Flex from "antd/lib/flex";
-import { I18NProvider } from "next/dist/server/lib/i18n-provider";
 
 export default function Home() {
 
