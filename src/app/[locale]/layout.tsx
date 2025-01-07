@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Concert_One } from "next/font/google";
+import { Concert_One, M_PLUS_Rounded_1c } from "next/font/google";
 import "./globals.css";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -11,6 +11,12 @@ const concertOne = Concert_One({
   variable: "--font-concert-one",
   subsets: ["latin"],
 });
+
+const mPlusRounded1c = M_PLUS_Rounded_1c({
+  weight: "400",
+  variable: "--font-m-plus-rounded-1c",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "ThesngNguyeenx",
@@ -39,11 +45,21 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${concertOne.className} antialiased h-screen`}>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-      </body>
+      {
+        locale === 'en' ? (
+          <body className={`${concertOne.className} antialiased h-screen`}>
+              <NextIntlClientProvider locale={locale} messages={messages}>
+                {children}
+              </NextIntlClientProvider>
+          </body>
+        ) : (
+          <body className={`${mPlusRounded1c.className} antialiased h-screen`}>
+              <NextIntlClientProvider locale={locale} messages={messages}>
+                {children}
+              </NextIntlClientProvider>
+          </body>
+        )
+      }
     </html>
   );
 } 

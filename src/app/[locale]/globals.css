@@ -105,5 +105,5 @@ body {
 }
 
 * {
-  font-family: 'Concert One';
+  font-family: var(--font-family);
 }
