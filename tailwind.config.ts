@@ -27,14 +27,14 @@ export default {
     animation: {
       'spin-slow': 'spin 6s linear infinite'
     },
-    fontFamily: {
-      sora: [`var(--font-sora)`, 'sans-serif']
-    },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+    },
+    boxShadow: {
+      'outer': '0 0 10px 5px rgba(255, 255, 255, 0.3)',
     },
   },
   container: {

@@ -1,15 +1,5 @@
-import ParticlesBackground from "@/components/background/pariticlesBackground";
-import Body from "@/components/home/body";
-import Flex from "antd/lib/flex";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-
-  return (
-    <>
-      <ParticlesBackground />
-      <Flex className="h-full relative flex justify-center items-center">
-        <Body />
-      </Flex>
-    </>
-  );
+export default function RootPage() {
+    redirect('/vi')
 }
