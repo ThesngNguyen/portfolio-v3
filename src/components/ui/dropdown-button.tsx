@@ -15,8 +15,6 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ items, onChange }) => {
 
   const selectedItem = items.find((item) => item.isSelected);
 
-  console.log(selectedItem);
-
   return (
     <ConfigProvider
       theme={{
@@ -27,6 +25,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ items, onChange }) => {
           colorTextPlaceholder: 'white',
           colorBorder: 'transparent',
           colorPrimary: 'white',
+          fontWeightStrong: 700,
         },
         components: {
           Select: {

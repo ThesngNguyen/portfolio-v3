@@ -33,7 +33,7 @@ export default function LocaleSwitcher() {
 
   return (
     //TODO: Update loading animation later
-    <div>
+    <div className="w-1/3 flex justify-end">
       {isPending && <p>Loading...</p>}
       <DropdownButton
         title="Change Language"

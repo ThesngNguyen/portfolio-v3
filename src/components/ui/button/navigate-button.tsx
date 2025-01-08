@@ -16,6 +16,7 @@ export const NavigationButton = ({buttonName, className, navigation}: Navigation
             type="link"
             href={navigation}
             target="_blank"
+            rel="noopener noreferrer"
         >
         {buttonName}
         </Button>
