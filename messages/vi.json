@@ -1,6 +1,8 @@
 {
     "Introduction": {
       "introductionName": "Nguyễn Cao Thắng",
-      "introductionCurrentPosition": "Software Engineer @ WhammyTech"
+      "introductionCurrentPosition": "Software Engineer @ WhammyTech",
+      "introductionFooter": "Được xây dựng và thiết kế bởi Nguyễn Cao Thắng sử dụng NextJS 15, React 19, TypeScript, TailwindCSS và AntDesign.",
+      "introductionCopyright": "Copyright © 2024-2025 All Rights Reserved."
     }
   }

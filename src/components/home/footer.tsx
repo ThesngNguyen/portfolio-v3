@@ -4,6 +4,7 @@ import Typography from 'antd/lib/typography';
 import Flex from 'antd/lib/flex';
 
 import { GithubOutlined } from '@ant-design/icons';
+import { t } from '@/utils/languages';
 
 const Footer = () => {
     const handleIconClick = () => {
@@ -13,8 +14,8 @@ const Footer = () => {
   return (
     <Flex vertical align='center' justify='center' className='my-6'>
         <GithubOutlined onClick={handleIconClick} className='m-2 text-3xl'/>
-        <Typography.Text className='text-base text-center text-white'>Built by Thang Nguyen Cao with NextJS 15, React 19, TypeScript, TailwindCSS and AntDesign.</Typography.Text>
-        <Typography.Text className='text-base text-center text-white'>Copyright © 2024-2025 All Rights Reserved.</Typography.Text>
+        <Typography.Text className='text-base500 text-center text-white'>{t("Introduction.introductionFooter")}</Typography.Text>
+        <Typography.Text className='text-base500 text-center text-white'>{t("Introduction.introductionCopyright")}</Typography.Text>
     </Flex>
   );
 };

@@ -32,6 +32,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontSize: {
+        'base300': '.75rem',
+        'base500': '1rem',
+        'base700': '1.25rem',
+        'base900': '1.75rem',
+      },
     },
     boxShadow: {
       'outer': '0 0 10px 5px rgba(255, 255, 255, 0.3)',
