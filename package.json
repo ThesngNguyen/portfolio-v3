@@ -1,6 +1,6 @@
 {
   "name": "portfolio-v3",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 3001",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "antd": "^5.22.7",
