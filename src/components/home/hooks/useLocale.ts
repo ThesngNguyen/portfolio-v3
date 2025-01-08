@@ -1,17 +1,23 @@
-import { MenuProps } from "antd/lib";
+import { useLanguage } from "@/i18n/languageProvider";
 
-const useLanguageItems = (): { key: string; label: string }[] => {
-    const items: MenuProps['items'] = [
-        {
-            key: 'en',
-            label: '🇺🇸 EN',
-        },
-        {
-            key: 'vi',
-            label: '🇻🇳 VI',
-        },
-    ];
-    return items.filter((item): item is { key: string; label: string } => item !== null);
+interface LanguageItem {
+  key: string;
+  label: string;
+  isSelected?: boolean;
+}
+
+const useLocale = (): LanguageItem[] => {
+  const { currentLanguage } = useLanguage();
+
+  const items = [
+    { key: "vi", label: "🇻🇳 VI" },
+    { key: "en", label: "🇺🇸 EN" },
+  ];
+
+  return items.map((item) => ({
+    ...item,
+    isSelected: item.key === currentLanguage,
+  }));
 };
 
-export default useLanguageItems;
+export default useLocale;

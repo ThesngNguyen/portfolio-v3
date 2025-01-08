@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from 'next-intl';
+import { LanguageProvider } from "@/i18n/languageProvider";
 
 const concertOne = Concert_One({
   weight: "400",
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <LanguageProvider>
       {
         locale === 'en' ? (
           <body className={`${concertOne.className} antialiased h-screen`}>
@@ -60,6 +62,7 @@ export default async function LocaleLayout({
           </body>
         )
       }
+      </LanguageProvider>
     </html>
   );
 } 

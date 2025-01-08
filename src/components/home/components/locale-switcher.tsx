@@ -1,29 +1,40 @@
 'use client';
 
-import React, { useState, useTransition } from 'react';
-import DropdownButton from '@/components/ui/dropdown-button';
-import useLanguageItems from '../hooks/useLocale';
-import { useRouter } from 'next/navigation';
+import React, { useState, useEffect, useTransition } from "react";
+import DropdownButton from "@/components/ui/dropdown-button";
+import useLocale from "../hooks/useLocale";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function LocaleSwitcher() {
   const [isPending, startTransition] = useTransition();
-  const [loading, setLoading] = useState(false);
-  const items = useLanguageItems();
+  const [currentLanguage, setCurrentLanguage] = useState("vi");
+  const pathname = usePathname();
   const router = useRouter();
+  const rawItems = useLocale();
+
+  useEffect(() => {
+    const languageFromPath = pathname.split("/")[1] || "vi"; 
+    setCurrentLanguage(languageFromPath);
+  }, [pathname]);
+
+  const items = rawItems.map((item) => ({
+    ...item,
+    isSelected: item.key === currentLanguage,
+  }));
 
   const handleLanguageChange = (value: string) => {
-    setLoading(true);
     startTransition(() => {
-      setTimeout(() => {
+      if (value !== currentLanguage) {
+        setCurrentLanguage(value);
         router.replace(`/${value}`);
-        setLoading(false);
-      }, 2000);
+      }
     });
   };
 
   return (
+    //TODO: Update loading animation later
     <div>
-      {(loading || isPending) && <></>}
+      {isPending && <p>Loading...</p>}
       <DropdownButton
         title="Change Language"
         items={items}
