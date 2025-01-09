@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ParticlesBackground from "@/components/background/pariticlesBackground";
 import Body from "@/components/home/body";
 import { ConfigProvider } from "antd/lib";
@@ -15,8 +15,14 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
     });
   }, [params]);
 
-  if (!locale) {
-    return null; //TODO - Thang: Add loading animation
+  const [localeLoaded, setLocaleLoaded] = useState(false);
+
+  useEffect(() => {
+    setLocaleLoaded(true);
+  }, []);
+
+  if (!localeLoaded) {
+    return null;
   }
 
   return (

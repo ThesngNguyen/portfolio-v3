@@ -5,7 +5,12 @@ import DropdownButton from "@/components/ui/dropdown-button";
 import useLocale from "../hooks/useLocale";
 import { usePathname, useRouter } from "next/navigation";
 
-export default function LocaleSwitcher() {
+interface LocaleSwitcherProps {
+  onLanguageChangeStart: () => void;
+  onLanguageChangeEnd: () => void;
+}
+
+export default function LocaleSwitcher({ onLanguageChangeStart, onLanguageChangeEnd }: LocaleSwitcherProps) {
   const [isPending, startTransition] = useTransition();
   const [currentLanguage, setCurrentLanguage] = useState("vi");
   const pathname = usePathname();
@@ -25,16 +30,19 @@ export default function LocaleSwitcher() {
   const handleLanguageChange = (value: string) => {
     startTransition(() => {
       if (value !== currentLanguage) {
+        onLanguageChangeStart();
         setCurrentLanguage(value);
-        router.replace(`/${value}`);
+
+        setTimeout(() => {
+          router.replace(`/${value}`);
+          onLanguageChangeEnd(); 
+        }, 500);
       }
     });
   };
 
   return (
-    //TODO: Update loading animation later
     <div className="w-1/3 flex justify-end">
-      {isPending && <p>Loading...</p>}
       <DropdownButton
         title="Change Language"
         items={items}
