@@ -105,5 +105,9 @@ body {
 }
 
 * {
-  font-family: 'Concert One';
+  font-family: var(--font-family);
+}
+
+.custom-select .ant-select-arrow {
+  color: white
 }

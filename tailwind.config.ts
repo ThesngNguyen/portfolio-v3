@@ -13,10 +13,9 @@ export default {
       }
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '960px',
-      xl: '1200px',
+      sm: '576px',
+      md: '960px',
+      lg: '1440px',
     },
     backgroundImage: {
       explosion: 'url("bg-explosion.png")',
@@ -31,6 +30,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontSize: {
+        'base300': ['.75rem', { lineHeight: '1rem' }],
+        'base500': ['1rem', { lineHeight: '1.5rem' }],
+        'base700': ['1.25rem', { lineHeight: '1.75rem' }],
+        'base900': ['1.75rem', { lineHeight: '2.25rem' }],
       },
     },
     boxShadow: {
