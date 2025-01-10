@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select, ConfigProvider } from 'antd';
-import { Flex } from 'antd/lib';
+import { Flex, Typography } from 'antd/lib';
 
 interface DropdownButtonProps {
   title?: string;
@@ -39,7 +39,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ items, onChange }) => {
       <Flex gap={4}>
         <Select
           value={selectedItem?.key}
-          className="text-2xl w-24 custom-select"
+          className="text-base300 md:text-base500 font-bold min-w-12 md:min-w-24 custom-select"
           popupClassName="bg-transparent"
           variant="outlined"
           onChange={handleSelectChange}
@@ -48,9 +48,8 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ items, onChange }) => {
             <Select.Option
               key={item.key}
               value={item.key}
-              className="text-white"
             >
-              {item.label}
+              <Typography.Text className='flex h-full justify-center text-white text-base300 md:text-base500'>{item.label}</Typography.Text>
             </Select.Option>
           ))}
         </Select>
