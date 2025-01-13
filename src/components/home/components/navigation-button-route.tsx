@@ -14,7 +14,7 @@ const NavigationButtonRoute = () => {
   return (
     <Flex ref={ref} className='w-full' justify='center' align='center'>
       {!isHide && (
-        <div className='grid grid-cols-2 md:flex md:flex-row gap-4 justify-center text-center'>
+        <div className='grid grid-cols-2 md:flex md:flex-row gap-8 justify-center text-center'>
           <ButtonEnterAnimation 
             buttonName='About'
             className='text-white'
