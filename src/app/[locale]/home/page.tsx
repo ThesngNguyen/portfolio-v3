@@ -2,17 +2,18 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import pkg from '../../../package.json';
+import pkg from '../../../../package.json';
 import { t } from '@/utils/languages';
 import LocaleSwitcher from './components/locale-switcher';
-import { NavigationButton } from '../ui/button/navigate-button';
+import { NavigationButton } from '../../../components/ui/button/navigate-button';
 import { Flex, Space, Tooltip, Typography } from 'antd/lib';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import RoundedAvatar from '../ui/rounded-avatar';
+import RoundedAvatar from '../../../components/ui/rounded-avatar';
 import CopyrightFooter from './components/copyright-footer';
 import useAvatar from './hooks/useAvatar';
-import { TypingEffect } from '../ui/text-animation/typing-effect';
+import { TypingEffect } from '../../../components/ui/text-animation/typing-effect';
 import NavigationButtonRoute from './components/navigation-button-route';
+import ParticlesBackground from '@/components/background/pariticlesBackground';
 
 const IntroductionComponent = () => {
   const [isPending, setIsPending] = useState(false);

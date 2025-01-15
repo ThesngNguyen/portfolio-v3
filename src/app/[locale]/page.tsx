@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import ParticlesBackground from "@/components/background/pariticlesBackground";
-import IntroductionComponent from "@/components/home/page";
+import IntroductionComponent from "@/app/[locale]/home/page";
 import { ConfigProvider } from "antd/lib";
 import Flex from "antd/lib/flex";
 
