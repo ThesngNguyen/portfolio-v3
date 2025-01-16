@@ -23,7 +23,7 @@ export default function ButtonEnterAnimation({ buttonLabel, className, handleCli
     >
       <Space>
         <Button
-          className={cn("custom-button rounded-md w-24 h-full p-4 md:min-w-40 md:min-h-16", className)}
+          className={cn("custom-button rounded-sm w-24 h-full p-4 md:min-w-40 md:min-h-16 md:rounded-md", className)}
           type="link"
           onClick={handleClick}
           target="_blank"
