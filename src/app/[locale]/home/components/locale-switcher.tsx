@@ -42,7 +42,7 @@ export default function LocaleSwitcher({ onLanguageChangeStart, onLanguageChange
   };
 
   return (
-    <div className="w-1/3 h-full flex justify-end items-center">
+    <div className="h-full flex justify-end items-center">
       <DropdownButton
         title="Change Language"
         items={items}

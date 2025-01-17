@@ -47,10 +47,10 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       {isLoading ? (
         <Preloader onComplete={handlePreloaderComplete} />
       ) : (
-        <div ref={contentRef} className="h-full justify-center items-center flex">
+        <Flex ref={contentRef} className="h-full justify-center items-center">
           <ParticlesBackground />
           <IntroductionComponent />
-        </div>
+        </Flex>
       )}
     </ConfigProvider>
   );

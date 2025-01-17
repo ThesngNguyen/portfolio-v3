@@ -29,7 +29,7 @@ export default function ButtonEnterAnimation({ buttonLabel, className, handleCli
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Typography.Text className="flex text-center h-full justify-center text-white text-base300 sm:text-base500">{buttonLabel}</Typography.Text>
+          <Typography.Text className="flex text-center h-full justify-center text-white text-sm md:text-base"><span>{buttonLabel}</span></Typography.Text>
         </Button>
       </Space>
     </motion.div>
