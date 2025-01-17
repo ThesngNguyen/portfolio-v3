@@ -13,9 +13,11 @@ export default {
       }
     },
     screens: {
-      sm: '640px',
-      md: '768px',
+      sm: '640px', 
+      md: '768px', 
       lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
     backgroundImage: {
       explosion: 'url("bg-explosion.png")',
@@ -32,10 +34,10 @@ export default {
         foreground: "var(--foreground)",
       },
       fontSize: {
-        'base300': ['.75rem', { lineHeight: '1rem' }],
-        'base500': ['1rem', { lineHeight: '1.5rem' }],
-        'base700': ['1.25rem', { lineHeight: '1.75rem' }],
-        'base900': ['1.75rem', { lineHeight: '2.25rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
       },
     },
     boxShadow: {
