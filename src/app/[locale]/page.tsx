@@ -37,7 +37,6 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
     }
   };
 
-
   return (
     <ConfigProvider theme={{
       token: {

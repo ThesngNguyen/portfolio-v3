@@ -54,11 +54,11 @@ const IntroductionComponent = () => {
         <Flex vertical gap={8}>
           <TypingEffect
             text={t("Introduction.introductionName")}
-            className='text-lg md:text-4xl lg:text-5xl xl:text-6xl text-center text-white'
+            className='text-3xl md:text-4xl text-center text-white'
           />
           <TypingEffect
             text='SWE @ WhammyTech'
-            className='text-sm md:text-3xl lg:text-4lg xl:text-5xl text-center text-white'
+            className='text-xl md:text-2xl text-center text-white'
           />
         </Flex>
       </div>

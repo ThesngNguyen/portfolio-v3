@@ -13,7 +13,7 @@ const CopyrightFooter = () => {
     
   return (
     <Flex vertical align='center' justify='center' className='my-6'>
-        <GithubOutlined onClick={handleIconClick} className='m-2 text-xl md:text-3xl'/>
+        <GithubOutlined onClick={handleIconClick} className='m-2 px-4 text-xl md:text-3xl'/>
         <Typography.Text className='text-sm md:text-base text-center text-white'>{t("Introduction.introductionFooter")}</Typography.Text>
         <Typography.Text className='text-sm md:text-base text-center text-white'>{t("Introduction.introductionCopyright")}</Typography.Text>
     </Flex>
