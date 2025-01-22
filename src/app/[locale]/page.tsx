@@ -1,29 +1,41 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import ParticlesBackground from "@/components/background/pariticlesBackground";
-import IntroductionComponent from "@/components/home/page";
+import React, { useEffect, useRef, useState } from 'react';
 import { ConfigProvider } from "antd/lib";
 import Flex from "antd/lib/flex";
+import gsap from 'gsap';
+import ParticlesBackground from "@/components/background/pariticlesBackground";
+import IntroductionComponent from "@/app/[locale]/home/page";
+import Preloader from '@/components/preloader/preloader';
 
 export default function Home({ params }: { params: Promise<{ locale: string }> }) {
   const [locale, setLocale] = React.useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     params.then(({ locale }) => {
       setLocale(locale);
     });
   }, [params]);
 
-  const [localeLoaded, setLocaleLoaded] = useState(false);
-
-  useEffect(() => {
-    setLocaleLoaded(true);
-  }, []);
-
-  if (!localeLoaded) {
-    return null;
-  }
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+    if (contentRef.current) {
+      gsap.fromTo(contentRef.current, 
+        { 
+          clipPath: 'inset(0 0 100% 0)',
+          opacity: 0 
+        },
+        { 
+          clipPath: 'inset(0 0 0% 0)',
+          opacity: 1, 
+          duration: 1.5, 
+          ease: 'power4.out' 
+        }
+      );
+    }
+  };
 
   return (
     <ConfigProvider theme={{
@@ -31,10 +43,14 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
         fontFamily: locale === 'en' ? 'Concert One' : 'M Plus Rounded 1C'
       }
     }}>
-      <ParticlesBackground />
-      <Flex className="h-full relative flex justify-center items-center">
-        <IntroductionComponent />
-      </Flex>
+      {isLoading ? (
+        <Preloader onComplete={handlePreloaderComplete} />
+      ) : (
+        <Flex ref={contentRef} className="h-full justify-center items-center">
+          <ParticlesBackground />
+          <IntroductionComponent />
+        </Flex>
+      )}
     </ConfigProvider>
   );
 }

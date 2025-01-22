@@ -39,7 +39,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ items, onChange }) => {
       <Flex gap={4}>
         <Select
           value={selectedItem?.key}
-          className="text-base300 md:text-base500 font-bold min-w-12 md:min-w-24 custom-select"
+          className="text-sm md:text-base font-bold min-w-12 md:min-w-24 custom-select"
           popupClassName="bg-transparent"
           variant="outlined"
           onChange={handleSelectChange}

@@ -15,14 +15,14 @@ export const NavigationButton = ({buttonName, className, navigation, needIcon}: 
     return (
         <Space>
             <Button 
-                icon={needIcon && (<ArrowLeftOutlined className="text-white text-xs sm:text-sm" />)} 
+                icon={needIcon && (<ArrowLeftOutlined className="text-white text-sm md:text-xl" />)} 
                 className={cn("rounded-md w-24 h-full p-4 md:min-w-40 md:min-h-16", className)}
                 type="link"
                 href={navigation}
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <Typography.Text className="flex text-center h-full justify-center text-white text-base300 sm:text-base500">{buttonName}</Typography.Text>
+                <Typography.Text className="flex text-center h-full justify-center text-white text-sm sm:text-sm md:text-base">{buttonName}</Typography.Text>
             </Button>
         </Space>
     )

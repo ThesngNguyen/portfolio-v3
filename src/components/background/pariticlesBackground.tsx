@@ -29,7 +29,7 @@ const ParticlesBackground = () => {
     );
   }
 
-  return <></>; 
+  return <></>;
 };
 
 export default ParticlesBackground;
