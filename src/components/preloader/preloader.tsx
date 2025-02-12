@@ -18,7 +18,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
         if (preloader && zoomBox) {
             gsap.timeline({
-                delay: 5,
+                delay: 3,
                 onComplete: () => {
                     preloader.style.display = 'none';
                     onComplete();
